@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import '../styles/isLoading.css';
 
 const LoadingScreen = () => {
@@ -14,6 +15,7 @@ const LoadingScreen = () => {
 				<div></div>
 				<div></div>
 			</div>
+			{/* <Spinner animation="border" variant="dark" /> */}
 		</div>
 	);
 };

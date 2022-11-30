@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Carousel, Col, ListGroup, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -6,6 +6,8 @@ import { getNewProduct } from '../store/slices/products.slice';
 
 const ProductDetail = () => {
 	const { id } = useParams();
+
+	const [inputValue, setInputValue] = useState('');
 
 	const dispatch = useDispatch();
 
@@ -25,6 +27,13 @@ const ProductDetail = () => {
 			productItem.id !== product.id
 	);
 	console.log(product);
+
+	const addCart = () => {
+		const product = {
+			id: product.id,
+			quantity: inputValue,
+		};
+	};
 
 	return (
 		<div>
@@ -66,9 +75,15 @@ const ProductDetail = () => {
 					<br />
 					<h4>{product?.description}</h4>
 
+					<input
+						type="number"
+						value={inputValue}
+						onChange={(e) => setInputValue(e.target.value)}
+					/>
 					<Button
 						className="btn btn-primary"
 						style={{ width: '8rem', marginTop: '1rem' }}
+						onClick={addCart}
 					>
 						buy
 					</Button>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
 
 const Purchases = () => {
@@ -8,6 +8,8 @@ const Purchases = () => {
 	useEffect(() => {
 		dispatch(getPurchasesThunk());
 	}, []);
+
+	const purchasesList = useSelector((state) => state.purchases);
 
 	return (
 		<div>
