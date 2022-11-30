@@ -90,14 +90,14 @@ const Home = () => {
 												className="fs-3 position-absolute bottom-0 start-0"
 												style={{ marginBottom: 0 }}
 											>
-												<p style={{ marginBottom: 0 }}>${product.price}</p>
+												${product.price}
 											</Card.Text>
 											<Button
 												variant="primary"
 												className="position-absolute bottom-0 end-0"
 											>
 												<i
-													class="fa-solid fa-cart-shopping"
+													className="fa-solid fa-cart-shopping"
 													style={{ fontSize: '1.3rem', width: '2.5rem' }}
 												></i>
 											</Button>
