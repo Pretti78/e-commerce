@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Carousel, Col, ListGroup, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { postAddCart } from '../store/slices/cart.slice';
 import { getNewProduct } from '../store/slices/products.slice';
 
 const ProductDetail = () => {
@@ -26,13 +27,14 @@ const ProductDetail = () => {
 			productItem.category?.id === product.category?.id &&
 			productItem.id !== product.id
 	);
-	console.log(product);
 
 	const addCart = () => {
-		const product = {
+		const productApi = {
 			id: product.id,
 			quantity: inputValue,
 		};
+		console.log(productApi);
+		dispatch(postAddCart(addCart));
 	};
 
 	return (
@@ -111,7 +113,7 @@ const ProductDetail = () => {
 										className="fs-3 position-absolute bottom-0 start-0"
 										style={{ marginBottom: 0 }}
 									>
-										<p style={{ marginBottom: 0 }}>${product?.price}</p>
+										${product?.price}
 									</Card.Text>
 									<Button
 										variant="primary"

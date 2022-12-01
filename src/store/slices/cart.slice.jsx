@@ -21,7 +21,29 @@ export const getCartThunk = () => (dispatch) => {
 		.finally(() => dispatch(setIsLoading(false)));
 };
 
-//
+export const postAddCart = (addCart) => (dispatch) => {
+	dispatch(setIsLoading(true));
+	return axios
+		.post(
+			'https://e-commerce-api.academlo.tech/api/v1/cart',
+			addCart,
+			getConfig()
+		)
+		.then(() => dispatch(getCartThunk()))
+		.finally(() => dispatch(setIsLoading(false)));
+};
+
+export const confirmBuyThunk = () => (dispatch) => {
+	dispatch(setIsLoading(true));
+	return axios
+		.post(
+			'https://e-commerce-api.academlo.tech/api/v1/purchases',
+			{},
+			getConfig()
+		)
+		.then((res) => dispatch(setCart([])))
+		.finally(() => dispatch(setIsLoading(false)));
+};
 
 export const { setCart } = cartSlice.actions;
 

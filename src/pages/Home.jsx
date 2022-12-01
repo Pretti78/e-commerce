@@ -96,10 +96,11 @@ const Home = () => {
 												variant="primary"
 												className="position-absolute bottom-0 end-0"
 											>
-												<i
+												product detail
+												{/* <i
 													className="fa-solid fa-cart-shopping"
 													style={{ fontSize: '1.3rem', width: '2.5rem' }}
-												></i>
+												></i> */}
 											</Button>
 										</Card.Body>
 									</Card>
