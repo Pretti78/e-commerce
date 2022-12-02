@@ -12,7 +12,6 @@ const Cart = ({ show, handleClose }) => {
 
 	const cartProducts = useSelector((state) => state.cart);
 
-	console.log(cartProducts);
 	return (
 		<Offcanvas show={show} onHide={handleClose}>
 			<Offcanvas.Header closeButton>

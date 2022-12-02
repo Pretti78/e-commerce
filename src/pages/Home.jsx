@@ -59,13 +59,15 @@ const Home = () => {
 								aria-describedby="basic-addon2"
 								value={inputValue}
 								onChange={(e) => setInputValue(e.target.value)}
+								style={{ fontSize: '1.5rem' }}
 							/>
 							<Button
 								variant="outline-secondary"
 								id="button-addon2"
 								onClick={() => dispatch(filterProducts(inputValue))}
+								className="border-dark"
 							>
-								Button
+								Search
 							</Button>
 						</InputGroup>
 					</div>

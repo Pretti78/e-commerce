@@ -26,9 +26,19 @@ const Login = () => {
 	return (
 		<Form onSubmit={handleSubmit(submit)}>
 			<Card
-				style={{ width: '40rem', height: '20rem' }}
+				style={{ width: '40rem', height: '35rem', fontSize: '1.5rem' }}
 				className="mx-auto shadow p-3 mb-5 bg-body rounded"
 			>
+				<div style={{ background: '#A5F8D3' }}>
+					<Card.Header>Test Data</Card.Header>
+					<Card.Body>
+						<Card.Text style={{ textAlign: 'center' }}>
+							Email: pretti7k@gmail.com
+							<br />
+							PassWord: pass1234
+						</Card.Text>
+					</Card.Body>
+				</div>
 				<Card.Body>
 					<Form.Group className="mb-3" controlId="formBasicEmail">
 						<Form.Label>Email address</Form.Label>

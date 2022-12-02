@@ -33,8 +33,7 @@ const ProductDetail = () => {
 			id: product.id,
 			quantity: inputValue,
 		};
-		console.log(productApi);
-		dispatch(postAddCart(addCart));
+		dispatch(postAddCart(productApi));
 	};
 
 	return (
@@ -81,10 +80,11 @@ const ProductDetail = () => {
 						type="number"
 						value={inputValue}
 						onChange={(e) => setInputValue(e.target.value)}
+						style={{ height: '3rem' }}
 					/>
 					<Button
 						className="btn btn-primary"
-						style={{ width: '8rem', marginTop: '1rem' }}
+						style={{ width: '8rem' }}
 						onClick={addCart}
 					>
 						buy

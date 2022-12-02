@@ -30,7 +30,8 @@ export const postAddCart = (addCart) => (dispatch) => {
 			getConfig()
 		)
 		.then(() => dispatch(getCartThunk()))
-		.finally(() => dispatch(setIsLoading(false)));
+		.finally(() => dispatch(setIsLoading(false)))
+		.catch((error) => console.log(error.response.data));
 };
 
 export const confirmBuyThunk = () => (dispatch) => {
