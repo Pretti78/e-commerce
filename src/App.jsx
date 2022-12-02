@@ -26,6 +26,13 @@ function App() {
 						<Route path="/purchases" element={<Purchases />} />
 					</Route>
 				</Routes>
+				<footer style={{ textAlign: 'center', fontSize: '1.5rem' }}>
+					<p>page desarrolada al 100% por Pretti Omar</p>
+
+					<a href="https://www.linkedin.com/in/pretti-omar/">Linkedin</a>
+					<br />
+					<a href="https://github.com/Pretti78">Git Hub</a>
+				</footer>
 			</Container>
 		</HashRouter>
 	);
